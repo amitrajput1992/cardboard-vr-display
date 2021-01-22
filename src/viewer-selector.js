@@ -26,12 +26,13 @@ const CLASS_NAME = 'webvr-polyfill-viewer-selector';
  * saving the currently selected index in localStorage.
  */
 function ViewerSelector(defaultViewer) {
+  // removing this since iframed viewers fail to access localStorage. The error is thrown directly to the document and never gets handled in code.
   // Try to load the selected key from local storage.
-  try {
-    this.selectedKey = localStorage.getItem(VIEWER_KEY);
-  } catch (error) {
-    console.error('Failed to load viewer profile: %s', error);
-  }
+  // try {
+  //   this.selectedKey = localStorage.getItem(VIEWER_KEY);
+  // } catch (error) {
+  //   console.error('Failed to load viewer profile: %s', error);
+  // }
 
   //If none exists, or if localstorage is unavailable, use the default key.
   if (!this.selectedKey) {
