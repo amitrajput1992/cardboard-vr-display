@@ -2581,7 +2581,6 @@ RotateInstructions.prototype.loadIcon_ = function () {
 };
 
 var DEFAULT_VIEWER = 'CardboardV1';
-var VIEWER_KEY = 'WEBVR_CARDBOARD_VIEWER';
 var CLASS_NAME = 'webvr-polyfill-viewer-selector';
 function ViewerSelector(defaultViewer) {
   if (!this.selectedKey) {
@@ -2629,11 +2628,6 @@ ViewerSelector.prototype.onSave_ = function () {
     return;
   }
   this.fireOnChange_(DeviceInfo.Viewers[this.selectedKey]);
-  try {
-    localStorage.setItem(VIEWER_KEY, this.selectedKey);
-  } catch (error) {
-    console.error('Failed to save viewer profile: %s', error);
-  }
   this.hide();
 };
 ViewerSelector.prototype.createDialog_ = function (options) {

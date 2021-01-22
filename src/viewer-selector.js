@@ -96,11 +96,11 @@ ViewerSelector.prototype.onSave_ = function() {
   this.fireOnChange_(DeviceInfo.Viewers[this.selectedKey]);
 
   // Attempt to save the viewer profile, but fails in private mode.
-  try {
-    localStorage.setItem(VIEWER_KEY, this.selectedKey);
-  } catch(error) {
-    console.error('Failed to save viewer profile: %s', error);
-  }
+  // try {
+  //   localStorage.setItem(VIEWER_KEY, this.selectedKey);
+  // } catch(error) {
+  //   console.error('Failed to save viewer profile: %s', error);
+  // }
   this.hide();
 };
 
