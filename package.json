@@ -1,5 +1,5 @@
 {
-  "name": "cardboard-vr-display",
+  "name": "@gmetrixr/cardboard-vr-display",
   "version": "1.0.19",
   "homepage": "https://github.com/immersive-web/cardboard-vr-display",
   "authors": [
@@ -26,13 +26,17 @@
     "webvr"
   ],
   "license": "Apache-2.0",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "test": "echo \"No tests defined\"",
     "build": "rollup -c",
     "watch": "rollup -c -w",
     "preversion": "npm test",
     "version": "npm run build && git add dist/*",
-    "postversion": "git push && git push --tags && npm publish"
+    "postversion": "git push && git push --tags && npm publish",
+    "publish:version": "N=$(node -p \"require('./package.json').name\") && npm version patch && git push --tags"
   },
   "repository": "immersive-web/cardboard-vr-display",
   "bugs": {

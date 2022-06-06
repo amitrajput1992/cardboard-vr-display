@@ -1,7 +1,13 @@
+branches:
+  only:
+    - master
 language: node_js
 node_js:
-  - "node"
-
-cache:
-  directories:
-    - node_modules
+  - 14
+deploy:
+  - provider: npm
+    email: $email
+    api_key: $npm_token
+    skip_cleanup: true
+    on:
+      branch: master
